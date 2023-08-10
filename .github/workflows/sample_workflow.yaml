@@ -10,4 +10,4 @@ jobs:
       - name: version
         run: |
           node -v
-          npm-v
+          npm -v
