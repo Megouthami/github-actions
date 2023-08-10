@@ -1,0 +1,14 @@
+name: github-actions
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: simple js github-actions
+        id: greet #id is given to steps so that they can be called or used in next steps
+        uses: actions/hello-world-javascript-action@v1 #here we can give commid id  after @ or branch(not recommended
+        with:
+          who-to-greet: Memo
+      - name: log greeting time
+        run: echo "${{ steps.greet.outputs.time}}" # to call the previous step
