@@ -5,9 +5,15 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: list files
+        run: |
+          pwd
+          ls -la
       - name: simple js github-actions
         id: greet #id is given to steps so that they can be called or used in next steps
-        uses: actions/hello-world-javascript-action@v1 #here we can give commid id  after @ or branch(not recommended
+        uses: actions/hello-world-javascript-action@v1 #here we can give commid id  after @ or branch(not recommended) or version form github>version> check veresions
         with:
           who-to-greet: Memo
       - name: log greeting time
